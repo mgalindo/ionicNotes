@@ -39,6 +39,11 @@ angular.module('mynotes.notestore', [])
                         return;
                     }
                 }
+            },
+            move: function(note, fromIndex, toIndex) {
+                notes.splice(fromIndex, 1);
+                notes.splice(toIndex, 0, note);
+                persist();
             }
 
         }
